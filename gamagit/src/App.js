@@ -1,9 +1,11 @@
-function App() {
+import React from "react";
+
+function App(props) {
   return (
-    <div>
+    <>
       <input name="usuario" id="usuario" className="usuarioInput" placeholder="Usuário" />
-      <h1>para de descer</h1>
-    </div>
+      <h1>{props.title}</h1>
+    </>
   );
 }
 
