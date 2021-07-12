@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import * as S from "./styled";
 
 export default function Repositories() {
+  const history = useHistory();
   const [repositories, setRepositories] = useState([]);
 
   useEffect(() => {
     let repositoriesName = localStorage.getItem("repositoriesName");
-    repositoriesName = JSON.parse(repositoriesName);
+    if (repositoriesName != null) {
+      repositoriesName = JSON.parse(repositoriesName);
 
-    setRepositories(repositoriesName);
+      setRepositories(repositoriesName);
 
-    //localStorage.clear();
+      localStorage.clear();
+    } else {
+      history.push("/");
+    }
   }, []);
 
   return (
