@@ -10,7 +10,7 @@ export default function Repositories() {
 
     setRepositories(repositoriesName);
 
-    localStorage.clear();
+    //localStorage.clear();
   }, []);
 
   return (
@@ -21,6 +21,8 @@ export default function Repositories() {
           return <S.ListItem>Repositório: {repository}</S.ListItem>;
         })}
       </S.List>
+
+      <S.LinkHome to="/">Voltar</S.LinkHome>
     </S.Container>
   );
 }
